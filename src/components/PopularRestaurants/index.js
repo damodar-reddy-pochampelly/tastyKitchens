@@ -4,6 +4,7 @@ import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
 import {AiFillStar} from 'react-icons/ai'
 import {FiChevronLeft, FiChevronRight} from 'react-icons/fi'
+import {Link} from 'react-router-dom'
 
 import './index.css'
 
@@ -106,26 +107,28 @@ class PopularRestaurants extends Component {
       <>
         <ul className="restaurants-container">
           {restaurantsList.map(eachRestaurant => (
-            <li
-              data-testid="restaurant-item"
-              key={eachRestaurant.id}
-              className="restaurant-item"
-            >
-              <img
-                src={eachRestaurant.imageUrl}
-                alt="restaurant"
-                className="restaurant-image"
-              />
-              <div className="restaurant-details">
-                <h1 className="restaurant-name">{eachRestaurant.name}</h1>
-                <p className="cuisine">{eachRestaurant.cuisine}</p>
-                <div className="ratings-container">
-                  <AiFillStar color="#FFCC00" size={12} />
-                  <p className="rating">{eachRestaurant.userRating.rating}</p>
-                  <p className="total-ratings">{`(${eachRestaurant.userRating.totalReviews} ratings)`}</p>
+            <Link to={`/restaurant/${eachRestaurant.id}`} className="link">
+              <li
+                data-testid="restaurant-item"
+                key={eachRestaurant.id}
+                className="restaurant-item"
+              >
+                <img
+                  src={eachRestaurant.imageUrl}
+                  alt="restaurant"
+                  className="restaurant-image"
+                />
+                <div className="restaurant-details">
+                  <h1 className="restaurant-name">{eachRestaurant.name}</h1>
+                  <p className="cuisine">{eachRestaurant.cuisine}</p>
+                  <div className="ratings-container">
+                    <AiFillStar color="#FFCC00" size={12} />
+                    <p className="rating">{eachRestaurant.userRating.rating}</p>
+                    <p className="total-ratings">{`(${eachRestaurant.userRating.totalReviews} ratings)`}</p>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
+            </Link>
           ))}
         </ul>
         <div className="pagination-container">

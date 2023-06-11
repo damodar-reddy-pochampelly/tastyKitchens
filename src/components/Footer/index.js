@@ -23,10 +23,22 @@ export default function Footer() {
         Contact us on
       </p>
       <div>
-        <FaPinterestSquare className="social-media-icon" />
-        <FaInstagram className="social-media-icon" />
-        <FaTwitter className="social-media-icon" />
-        <FaFacebookSquare className="social-media-icon" />
+        <FaPinterestSquare
+          className="social-media-icon"
+          data-testid="pintrest-social-icon"
+        />
+        <FaInstagram
+          className="social-media-icon"
+          data-testid="instagram-social-icon"
+        />
+        <FaTwitter
+          className="social-media-icon"
+          data-testid="twitter-social-icon"
+        />
+        <FaFacebookSquare
+          className="social-media-icon"
+          data-testid="facebook-social-icon"
+        />
       </div>
     </div>
   )
