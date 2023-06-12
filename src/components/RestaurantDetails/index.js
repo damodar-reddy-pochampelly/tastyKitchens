@@ -106,7 +106,7 @@ class RestaurantDetails extends Component {
         <div className="food-items-bg-container">
           <ul className="food-items-container">
             {dishes.foodItems.map(item => (
-              <FoodItem item={item} />
+              <FoodItem item={item} key={item.id} />
             ))}
           </ul>
         </div>

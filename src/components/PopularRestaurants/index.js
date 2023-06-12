@@ -107,12 +107,12 @@ class PopularRestaurants extends Component {
       <>
         <ul className="restaurants-container">
           {restaurantsList.map(eachRestaurant => (
-            <Link to={`/restaurant/${eachRestaurant.id}`} className="link">
-              <li
-                data-testid="restaurant-item"
-                key={eachRestaurant.id}
-                className="restaurant-item"
-              >
+            <Link
+              to={`/restaurant/${eachRestaurant.id}`}
+              className="link"
+              key={eachRestaurant.id}
+            >
+              <li data-testid="restaurant-item" className="restaurant-item">
                 <img
                   src={eachRestaurant.imageUrl}
                   alt="restaurant"

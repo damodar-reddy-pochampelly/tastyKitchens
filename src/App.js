@@ -5,6 +5,8 @@ import CartContext from './context/CartContext'
 import Login from './components/Login'
 import Home from './components/Home'
 import RestaurantDetails from './components/RestaurantDetails'
+import Cart from './components/Cart'
+import NotFound from './components/NotFound'
 
 import './App.css'
 
@@ -104,6 +106,8 @@ class App extends Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/" component={Home} />
           <Route exact path="/restaurant/:id" component={RestaurantDetails} />
+          <Route exact path="/cart" component={Cart} />
+          <Route component={NotFound} />
         </Switch>
       </CartContext.Provider>
     )

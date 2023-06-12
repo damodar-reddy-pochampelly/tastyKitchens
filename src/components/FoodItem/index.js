@@ -26,7 +26,7 @@ class FoodItem extends Component {
               prevState => ({
                 quantity: prevState.quantity + 1,
               }),
-              addCartItem({...item, quantity}),
+              addCartItem({...item, quantity: quantity + 1}),
             )
           }
 
@@ -34,14 +34,14 @@ class FoodItem extends Component {
             this.setState(prevState => ({
               quantity: prevState.quantity - 1,
             }))
-            incrementCartItemQuantity(item.id)
+            decrementCartItemQuantity(item.id)
           }
 
           const onClickIncrement = () => {
             this.setState(prevState => ({
               quantity: prevState.quantity + 1,
             }))
-            decrementCartItemQuantity(item.id)
+            incrementCartItemQuantity(item.id)
           }
 
           return (
