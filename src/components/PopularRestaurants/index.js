@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {Component} from 'react'
 import {BsFilterLeft} from 'react-icons/bs'
 import Loader from 'react-loader-spinner'
@@ -96,7 +97,7 @@ class PopularRestaurants extends Component {
   }
 
   renderLoader = () => (
-    <div className="restaurants-loader">
+    <div className="restaurants-loader" testid="restaurants-list-loader">
       <Loader type="ThreeDots" color="#F7931E" />
     </div>
   )
@@ -112,7 +113,7 @@ class PopularRestaurants extends Component {
               className="link"
               key={eachRestaurant.id}
             >
-              <li data-testid="restaurant-item" className="restaurant-item">
+              <li testid="restaurant-item" className="restaurant-item">
                 <img
                   src={eachRestaurant.imageUrl}
                   alt="restaurant"
@@ -133,7 +134,7 @@ class PopularRestaurants extends Component {
         </ul>
         <div className="pagination-container">
           <button
-            data-testid="pagination-left-button"
+            testid="pagination-left-button"
             type="button"
             className="pagination-button"
             onClick={this.onClickLeftPagination}
@@ -142,13 +143,13 @@ class PopularRestaurants extends Component {
           </button>
           <p className="pagination">
             <span
-              data-testid="active-page-number"
+              testid="active-page-number"
               className="active-pagination"
-            >{`${activePage} `}</span>
-            {`of ${totalPages}`}
+            >{`${activePage}`}</span>
+            {` of ${totalPages}`}
           </p>
           <button
-            data-testid="pagination-right-button"
+            testid="pagination-right-button"
             type="button"
             className="pagination-button"
             onClick={this.onClickRightPagination}

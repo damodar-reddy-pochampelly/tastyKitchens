@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {Component} from 'react'
 import {AiFillStar} from 'react-icons/ai'
 import {BsPlusSquare, BsDashSquare} from 'react-icons/bs'
@@ -45,7 +46,7 @@ class FoodItem extends Component {
           }
 
           return (
-            <li key={item.id} className="food-item">
+            <li key={item.id} className="food-item" testid="foodItem">
               <img
                 src={item.imageUrl}
                 alt={item.name}
@@ -72,18 +73,18 @@ class FoodItem extends Component {
                 ) : (
                   <div className="food-item-counter-container">
                     <button
-                      data-testid="decrement-count"
+                      testid="decrement-count"
                       type="button"
                       onClick={onClickDecrement}
                       className="food-item-button"
                     >
                       <BsDashSquare className="food-item-counter-icons" />
                     </button>
-                    <p data-testid="active-count" className="food-item-count">
+                    <p testid="active-count" className="food-item-count">
                       {quantity}
                     </p>
                     <button
-                      data-testid="increment-count"
+                      testid="increment-count"
                       type="button"
                       onClick={onClickIncrement}
                       className="food-item-button"

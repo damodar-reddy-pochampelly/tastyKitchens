@@ -1,17 +1,15 @@
-import {withRouter} from 'react-router-dom'
+import {withRouter, Link} from 'react-router-dom'
 
 import CartContext from '../../context/CartContext'
 import './index.css'
 
-const Payment = props => (
+const Payment = () => (
   <CartContext.Consumer>
     {value => {
       const {removeAllCartItems} = value
 
       const onClickGoToHome = () => {
         removeAllCartItems()
-        const {history} = props
-        history.replace('/')
       }
 
       return (
@@ -25,13 +23,15 @@ const Payment = props => (
           <p className="success-description">
             Thank you for ordering Your payment is successfully completed.
           </p>
-          <button
-            type="button"
-            className="go-to-home-btn"
-            onClick={onClickGoToHome}
-          >
-            Go To Home Page
-          </button>
+          <Link to="/" className="payment-to-home-link">
+            <button
+              type="button"
+              className="go-to-home-btn"
+              onClick={onClickGoToHome}
+            >
+              Go To Home Page
+            </button>
+          </Link>
         </div>
       )
     }}

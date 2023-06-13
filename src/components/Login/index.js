@@ -5,7 +5,12 @@ import {Redirect} from 'react-router-dom'
 import './index.css'
 
 class Login extends Component {
-  state = {username: '', password: '', isErrorMsgShown: false, errorMsg: ''}
+  state = {
+    username: '',
+    password: '',
+    isErrorMsgShown: false,
+    errorMsg: '',
+  }
 
   onChangeUserName = event => this.setState({username: event.target.value})
 
@@ -40,10 +45,9 @@ class Login extends Component {
     }
     const response = await fetch(loginUrl, options)
     const data = await response.json()
-    console.log(data)
     if (response.ok === true) {
       this.onSubmitSuccess(data.jwt_token)
-    } else if (data.status_code === 400) {
+    } else {
       this.onSubmitFailure(data.error_msg)
     }
   }
@@ -59,7 +63,7 @@ class Login extends Component {
       <div className="website-login-bg-container">
         <img
           src="https://res.cloudinary.com/dqfyurtdb/image/upload/v1685954626/Rectangle_1457login_w2tbce.png"
-          alt="website login"
+          alt="website log0"
           className="website-login-image-mobile-view"
         />
         <div className="form-bg-container">
@@ -95,7 +99,7 @@ class Login extends Component {
                 value={password}
               />
             </div>
-            {isErrorMsgShown && <p className="error-msg">{errorMsg}</p>}
+            {isErrorMsgShown && <p className="error-msg">*{errorMsg}</p>}
             <button type="submit" className="login-button">
               Login
             </button>

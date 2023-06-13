@@ -18,26 +18,21 @@ export default function Footer() {
         <h1 className="title-in-footer">Tasty Kitchens</h1>
       </div>
       <p className="footer-description">
-        The only thing we are serious about is food.
-        <br />
-        Contact us on
+        The only thing we are serious about is food. Contact us on
       </p>
       <div>
         <FaPinterestSquare
           className="social-media-icon"
-          data-testid="pintrest-social-icon"
+          testid="pintrest-social-icon"
         />
         <FaInstagram
           className="social-media-icon"
-          data-testid="instagram-social-icon"
+          testid="instagram-social-icon"
         />
-        <FaTwitter
-          className="social-media-icon"
-          data-testid="twitter-social-icon"
-        />
+        <FaTwitter className="social-media-icon" testid="twitter-social-icon" />
         <FaFacebookSquare
           className="social-media-icon"
-          data-testid="facebook-social-icon"
+          testid="facebook-social-icon"
         />
       </div>
     </div>

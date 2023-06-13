@@ -81,3 +81,7 @@
     line-height: 24px;
   }
 }
+
+.link-to-home-page {
+  text-decoration: none;
+}

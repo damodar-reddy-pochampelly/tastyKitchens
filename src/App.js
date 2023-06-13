@@ -7,6 +7,7 @@ import Home from './components/Home'
 import RestaurantDetails from './components/RestaurantDetails'
 import Cart from './components/Cart'
 import NotFound from './components/NotFound'
+import ProtectedRoute from './components/ProtectedRoute'
 
 import './App.css'
 
@@ -104,9 +105,13 @@ class App extends Component {
       >
         <Switch>
           <Route exact path="/login" component={Login} />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/restaurant/:id" component={RestaurantDetails} />
-          <Route exact path="/cart" component={Cart} />
+          <ProtectedRoute exact path="/" component={Home} />
+          <ProtectedRoute
+            exact
+            path="/restaurant/:id"
+            component={RestaurantDetails}
+          />
+          <ProtectedRoute exact path="/cart" component={Cart} />
           <Route component={NotFound} />
         </Switch>
       </CartContext.Provider>

@@ -11,7 +11,7 @@ class Home extends Component {
   render() {
     return (
       <>
-        <Navbar />
+        <Navbar activeTab="home" />
         <div className="home-container">
           <Carousel />
           <PopularRestaurants />

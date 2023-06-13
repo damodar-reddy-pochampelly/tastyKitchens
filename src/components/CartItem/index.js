@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {BsPlusSquare, BsDashSquare} from 'react-icons/bs'
 import {BiRupee} from 'react-icons/bi'
 
@@ -20,40 +21,44 @@ const CartItem = props => (
 
       return (
         <li className="cart-item">
-          <div className="cart-item-img-bg-container">
+          <div className="cart-item-container" testid="cartItem">
             <div className="cart-item-image-container">
               <img
                 src={cartItem.imageUrl}
                 alt={cartItem.name}
                 className="cart-item-image"
               />
-              <h1 className="cart-item-name-desktop">{cartItem.name}</h1>
+              <p className="cart-item-name-desktop">{cartItem.name}</p>
             </div>
-          </div>
-          <div className="cart-item-rate-quantity-container">
-            <h1 className="cart-item-name">{cartItem.name}</h1>
-            <div className="cart-item-counter">
-              <button
-                type="button"
-                className="cart-item-counter-button"
-                onClick={onDecrementCartItem}
-              >
-                <BsDashSquare className="cart-item-counter-icon " />
-              </button>
-              <p className="cart-item-count">{cartItem.quantity}</p>
-              <button
-                type="button"
-                className="cart-item-counter-button"
-                onClick={onIncrementCartItem}
-              >
-                <BsPlusSquare className="cart-item-counter-icon" />
-              </button>
-            </div>
-            <div className="cart-item-cost-container">
-              <BiRupee className="cart-item-rupee-icon" />
-              <p className="cart-item-rate">
-                {cartItem.quantity * cartItem.cost}
-              </p>
+            <div className="cart-item-details-container">
+              <h1 className="cart-item-name">{cartItem.name}</h1>
+              <div className="cart-item-counter">
+                <button
+                  type="button"
+                  className="cart-item-counter-button"
+                  onClick={onDecrementCartItem}
+                  testid="decrement-quantity"
+                >
+                  <BsDashSquare className="cart-item-counter-icon " />
+                </button>
+                <p className="cart-item-count" testid="item-quantity">
+                  {cartItem.quantity}
+                </p>
+                <button
+                  testid="increment-quantity"
+                  type="button"
+                  className="cart-item-counter-button"
+                  onClick={onIncrementCartItem}
+                >
+                  <BsPlusSquare className="cart-item-counter-icon" />
+                </button>
+              </div>
+              <div className="cart-item-cost-container">
+                <BiRupee className="cart-item-rupee-icon" />
+                <p className="cart-item-rate">
+                  {cartItem.quantity * cartItem.cost}
+                </p>
+              </div>
             </div>
           </div>
         </li>

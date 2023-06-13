@@ -67,3 +67,7 @@
   color: #ffffff;
   border: none;
 }
+
+.to-home-nav-link {
+  text-decoration: none;
+}

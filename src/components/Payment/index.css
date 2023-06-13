@@ -70,3 +70,7 @@
   color: #ffffff;
   border: none;
 }
+
+.payment-to-home-link {
+  text-decoration: none;
+}

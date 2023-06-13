@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {Component} from 'react'
 import {BiRupee} from 'react-icons/bi'
 
@@ -52,22 +53,26 @@ class CartItemsList extends Component {
                           <CartItem key={eachItem.id} cartItem={eachItem} />
                         ))}
                       </ul>
-                      <hr className="cart-dashed-line" />
-                      <div className="total-amount-container">
-                        <p className="order-total">Order Total:</p>
-                        <div className="total-container">
-                          <BiRupee className="order-rupee-icon" />
-                          <p className="total">{getTotalAmount()}</p>
+                      <div>
+                        <hr className="cart-dashed-line" />
+                        <div className="total-amount-container">
+                          <h1 className="order-total">Order Total:</h1>
+                          <div className="total-container">
+                            <BiRupee className="order-rupee-icon" />
+                            <p className="total" testid="total-price">
+                              {getTotalAmount()}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                      <div className="place-order-container">
-                        <button
-                          type="button"
-                          className="place-order-btn"
-                          onClick={this.onPlaceOrder}
-                        >
-                          Place Order
-                        </button>
+                        <div className="place-order-container">
+                          <button
+                            type="button"
+                            className="place-order-btn"
+                            onClick={this.onPlaceOrder}
+                          >
+                            Place Order
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>

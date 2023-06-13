@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
@@ -32,7 +33,7 @@ class Carousel extends Component {
   }
 
   renderLoader = () => (
-    <div data-testid="restaurants-offers-loader">
+    <div testid="restaurants-offers-loader">
       <Loader type="ThreeDots" color="#F7931E" />
     </div>
   )
@@ -46,6 +47,7 @@ class Carousel extends Component {
       autoplay: true,
       autoplaySpeed: 3000,
       arrows: false,
+      dotsClass: 'slick-dots',
     }
 
     return (

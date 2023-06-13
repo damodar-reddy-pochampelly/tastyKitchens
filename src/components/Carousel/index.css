@@ -21,3 +21,17 @@
     height: 300px;
   }
 }
+
+.slick-dots {
+  bottom: 10px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white !important;
+  opacity: 0.7 !important;
+}
+
+.slick-dots li button:before {
+  color: white !important;
+  opacity: 0.3 !important;
+}

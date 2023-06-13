@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
@@ -62,7 +63,7 @@ class RestaurantDetails extends Component {
 
   renderLoader = () => (
     <div
-      data-testid="restaurant-details-loader"
+      testid="restaurant-details-loader"
       className="restaurant-details-loader-container"
     >
       <Loader type="ThreeDots" color="#F7931E" />

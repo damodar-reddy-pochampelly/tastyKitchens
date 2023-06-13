@@ -10,7 +10,7 @@ class Cart extends Component {
   render() {
     return (
       <>
-        <Navbar />
+        <Navbar activeTab="cart" />
         <CartContext.Consumer>
           {value => {
             const {cartList} = value

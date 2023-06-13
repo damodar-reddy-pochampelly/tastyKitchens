@@ -13,6 +13,8 @@ const Navbar = props => {
     history.replace('/login')
   }
 
+  const {activeTab} = props
+
   return (
     <nav className="navigation-bar">
       <div className="nav-container">
@@ -39,10 +41,26 @@ const Navbar = props => {
               <div className="hamburger-menu-items-container">
                 <div className="hamburger-items">
                   <Link to="/" className="nav-link">
-                    <p className="home-item-mobile">Home</p>
+                    <p
+                      className={
+                        activeTab === 'home'
+                          ? 'home-item-mobile-active'
+                          : 'home-item-mobile'
+                      }
+                    >
+                      Home
+                    </p>
                   </Link>
                   <Link to="/cart" className="nav-link">
-                    <p className="cart-item-mobile">Cart</p>
+                    <p
+                      className={
+                        activeTab === 'cart'
+                          ? 'cart-item-mobile-active'
+                          : 'cart-item-mobile'
+                      }
+                    >
+                      Cart
+                    </p>
                   </Link>
                   <button
                     type="button"
@@ -64,8 +82,28 @@ const Navbar = props => {
           </Popup>
         </div>
         <ul className="nav-items-container">
-          <li className="home-item-tablet">Home</li>
-          <li className="cart-item-tablet">Cart</li>
+          <Link to="/" className="nav-link">
+            <li
+              className={
+                activeTab === 'home'
+                  ? 'home-item-tablet-active'
+                  : 'home-item-tablet'
+              }
+            >
+              Home
+            </li>
+          </Link>
+          <Link to="/cart" className="nav-link">
+            <li
+              className={
+                activeTab === 'cart'
+                  ? 'cart-item-tablet-active'
+                  : 'cart-item-tablet'
+              }
+            >
+              Cart
+            </li>
+          </Link>
           <li className="logout-item">
             <button
               type="button"
